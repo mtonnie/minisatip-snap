@@ -6,24 +6,29 @@
     This is my-snap's description. You have a paragraph or two to tell the
    
 
-  #base: core18
+  base: core18
+
+  architectures:
+    - build-on: amd64
+      run-on: amd64
 
   grade: devel # must be 'stable' to release into candidate/stable channels
   confinement: devmode # use 'strict' once you have the right plugs and slots
 
   apps:
-    command: usr/bin/minisatip
-    deamon: simple
-    plugs:
-      - dvb
-      - network
-      - network-bind
+    minisatip:
+      command: usr/bin/minisatip
+      deamon: simple
+      plugs:
+        - dvb
+        - network
+        - network-bind
 
   parts:
     minisatip:
-      source: https://github.com/catalinii/minisatip.git
-      source-type: svn
       plugin: make
+      source: https://github.com/catalinii/minisatip.git
+      source-type: zipgit
       override-build: | 
         ./configure --help
         make 
