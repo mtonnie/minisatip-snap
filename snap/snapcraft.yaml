@@ -32,7 +32,6 @@
       override-build: | 
         ./configure --prefix=/usr 
         make DDCI=1
-        make install
         ls -lRa
       build-packages:
         - libdvbcsa-dev
