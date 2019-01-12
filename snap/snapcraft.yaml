@@ -32,6 +32,8 @@
       override-build: | 
         ./configure --prefix=/usr 
         make DDCI=1
+        cp minisatip ../install/usr/bin/minisatip
+        pwd
         ls -lRa
       build-packages:
         - libdvbcsa-dev
