@@ -18,7 +18,7 @@
   apps:
     minisatip:
       command: usr/bin/minisatip
-      deamon: simple
+      daemon: simple
       plugs:
         - dvb
         - network
