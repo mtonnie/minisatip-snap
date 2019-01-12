@@ -31,8 +31,10 @@
       source-type: git
       override-build: | 
         ./configure --prefix=/usr 
-        make DDCI=1
+        make #DDCI=1
+        make install
       build-packages:
         - libdvbcsa-dev
         - dvb-apps
+        - libssl-dev
   
