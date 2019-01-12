@@ -30,6 +30,6 @@
       source: https://github.com/catalinii/minisatip.git
       source-type: git
       override-build: | 
-        ./configure --prefix=usr --enable-ddci
-        make 
+        ./configure --prefix=/usr 
+        make DDCI=1
   
