@@ -34,6 +34,8 @@
         make DDCI=1
         mkdir -p ../install/usr/bin
         cp minisatip ../install/usr/bin/minisatip
+        mkdir -p ../install/usr/share/nginx/html
+        cp -R html/* ../install/usr/share/nginx/html
         pwd
         ls -lRa
       build-packages:
