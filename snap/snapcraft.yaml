@@ -18,7 +18,7 @@
   apps:
     minisatip:
       command: usr/bin/minisatip -u 0:0-1284,0:1-1400 -v -f -R $SNAP/usr/share/minisatip/html
-      #daemon: simple
+      daemon: simple
       plugs:
         - dvb
         - network
