@@ -36,8 +36,7 @@
         cp minisatip ../install/usr/bin/minisatip
         mkdir -p ../install/usr/share/nginx/html
         cp -R html/* ../install/usr/share/nginx/html
-        pwd
-        ls -lRa
+        ls -lRa ../install
       build-packages:
         - libdvbcsa-dev
         - dvb-apps
