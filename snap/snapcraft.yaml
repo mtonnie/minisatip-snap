@@ -48,6 +48,7 @@
         - usr/bin/minisatip
         - usr/lib/libdvbapi.so
         - usr/lib/libdvben50221.so
+        - usr/lib/libucsi.so
         - usr/lib/*/libdvbcsa.so.1
         - usr/lib/*/libdvbcsa.so.1.0.1
         - usr/share/minisatip/html
