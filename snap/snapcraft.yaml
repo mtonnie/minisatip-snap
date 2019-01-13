@@ -6,7 +6,7 @@
     This is my-snap's description. You have a paragraph or two to tell the
    
 
-  base: core18
+  #base: core18
 
   architectures:
     - build-on: amd64
@@ -17,8 +17,8 @@
 
   apps:
     minisatip:
-      command: usr/bin/minisatip -f -R /usr/share/minisatip/html
-      daemon: simple
+      command: usr/bin/minisatip -f -R usr/share/minisatip/html
+      #daemon: simple
       plugs:
         - dvb
         - network
