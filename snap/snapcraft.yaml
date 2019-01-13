@@ -34,8 +34,8 @@
         make DDCI=1
         mkdir -p ../install/usr/bin
         cp minisatip ../install/usr/bin/minisatip
-        mkdir -p ../install/usr/share/nginx/html
-        cp -R html/* ../install/usr/share/nginx/html
+        mkdir -p ../install/usr/share/minisatip/html
+        cp -R html/* ../install/usr/share/minisatip/html
         ls -lRa ../install
       build-packages:
         - libdvbcsa-dev
@@ -44,4 +44,13 @@
       stage-packages:
         - libdvbcsa1
         - dvb-apps
+      prime:
+        - usr/bin/minisatip
+        - usr/lib/libdvbapi.so
+        - usr/lib/libdvben50221.so
+        - usr/lib/*/libdvbcsa.so.1
+        - usr/lib/*/libdvbcsa.so.1.0.1
+        - usr/share/minisatip/html
+        
+
   
