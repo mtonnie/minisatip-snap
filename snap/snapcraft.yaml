@@ -41,4 +41,7 @@
         - libdvbcsa-dev
         - dvb-apps
         - libssl-dev
+      stage-packages:
+        - libdvbcsa
+        - dvb-apps
   
