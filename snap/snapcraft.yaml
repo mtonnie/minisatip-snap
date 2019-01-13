@@ -32,6 +32,7 @@
       override-build: | 
         ./configure --prefix=/usr 
         make DDCI=1
+        mkdir -p ../install/usr/bin
         cp minisatip ../install/usr/bin/minisatip
         pwd
         ls -lRa
