@@ -51,6 +51,6 @@
         - usr/lib/*/libdvbcsa.so.1
         - usr/lib/*/libdvbcsa.so.1.0.1
         - usr/share/minisatip/html
-        
+        - etc/*
 
   
