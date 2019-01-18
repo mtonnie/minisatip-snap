@@ -19,7 +19,7 @@
 
   apps:
     minisatip:
-      command: usr/bin/minisatip -f -R $SNAP/usr/share/minisatip/html -u 0:0-1400,0:1-1284 -l http -v ca 
+      command: usr/bin/minisatip -f -R $SNAP/usr/share/minisatip/html -u 0:0-1400,0:1-1284 -l dvb,pmt,adapter 
       daemon: simple
       plugs:
         - dvb
