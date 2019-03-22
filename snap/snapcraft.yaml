@@ -8,7 +8,7 @@
     The application is designed to stream the requested data to multiple clients (even with one dvb card) 
     in the same time while opening different pids.
 
-  #base: core18
+  base: core18
 
   architectures:
     - build-on: amd64
@@ -19,8 +19,8 @@
 
   apps:
     minisatip:
-      command: usr/bin/minisatip -R $SNAP/usr/share/minisatip/html -F $SNAP_DATA/minisatip.log #-u 0:0-1284,1:1-1400 
-      #daemon: simple
+      command: usr/bin/minisatip -R $SNAP/usr/share/minisatip/html -F -u 0:0-1284,1:1-1400,2:2-1516
+      daemon: simple
       plugs:
         - dvb
         - network
