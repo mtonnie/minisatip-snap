@@ -8,7 +8,7 @@
     The application is designed to stream the requested data to multiple clients (even with one dvb card) 
     in the same time while opening different pids.
 
-  base: core18
+  #base: core18
 
   architectures:
     - build-on: amd64
