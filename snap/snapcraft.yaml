@@ -19,7 +19,7 @@
 
   apps:
     minisatip:
-      command: usr/bin/minisatip -R $SNAP/usr/share/minisatip/html -f -u 0:0-1284,1:1-1400,2:2-1516
+      command: usr/bin/minisatip -R $SNAP/usr/share/minisatip/html -f -u 0:0-1284,1:1-1400,2:2-1516 -o 127.0.0.1:9000
       daemon: simple
       plugs:
         - dvb
