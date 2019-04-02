@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+# Obtain configuration value
+unicable="$(snapctl get unicable)"
+if ! expr "$unicable" : '^.\+$' > /dev/null; then
+    port="4040"
+    snapctl set port="$port"
+fi
+
+# Validate it
+if ! expr "$unicable" : '^\d:\d-\d{4}(\-\d{1,})?( \d:\d-\d{4}(\-\d{1,})?)*$' > /dev/null; then
+    echo "\"$unicable\" is not a valid unicable" >&2
+    exit 1
+fi
+
+
+
+log=$(snapctl get log)
+debug=$(snapctl get debug)
+unicable=$(snapctl get unicable)
+dvbapi=$(snapctl get delsys)
