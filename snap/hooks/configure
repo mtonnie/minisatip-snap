@@ -1,1 +1,9 @@
+#!/bin/sh -e
 
+log_opt=$(snapctl get log)
+if ! expr "$log_opt" : '^(general|http|socketworks|stream|adapter|satipc|pmt|tables|dvbapi|lock|netceiver|ca|axe|socket|utils|dmx|ssdp|dvb)(,(general|http|socketworks|stream|adapter|satipc|pmt|tables|dvbapi|lock|netceiver|ca|axe|socket|utils|dmx|ssdp|dvb))*$' > /dev/null; then
+    echo "\$log_opt\" is not a valid log value" >&2
+    exit 1
+else
+    snapctl set log ""
+fi
