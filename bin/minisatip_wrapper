@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export OPTS="-f -R $SNAP/usr/share/minisatip/html"
+
+log_opt=$(snapctl get log)
+if ! expr "$log_opt" : '^.\$' > /dev/null; then
+    export OPTS=$OPTS:" -l $log_opt"
+fi
+ 
+$SNAP/usr/share/minisatip/html "$OPTS"
