@@ -19,8 +19,8 @@
 
   apps:
     minisatip:
-      command: usr/bin/minisatip -R $SNAP/usr/share/minisatip/html -f -u 0:0-1284,1:1-1400,2:2-1516 #-o 127.0.0.1:9000
-      daemon: simple
+      command: usr/bin/minisatip_wrapper
+      daemon: forking
       plugs:
         - dvb
         - network
@@ -56,4 +56,8 @@
         - usr/share/minisatip/html
         - etc/*
 
-  
+    wrapper:
+      plugin: dump
+      source: bin
+      organize: 
+        bin/minisatip_wrapper: usr/bin/minisatip_wrapper
