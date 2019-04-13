@@ -61,4 +61,4 @@
       plugin: dump
       source: bin
       organize: 
-        "bin/minisatip_wrapper": usr/bin/minisatip_wrapper
+        bin/: usr/bin/
