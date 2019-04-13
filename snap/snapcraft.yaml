@@ -28,6 +28,7 @@
 
   parts:
     minisatip:
+      after: [wrapper]
       plugin: make
       source: https://github.com/catalinii/minisatip.git
       source-type: git
@@ -60,4 +61,4 @@
       plugin: dump
       source: bin
       organize: 
-        bin/minisatip_wrapper: usr/bin/minisatip_wrapper
+        "bin/minisatip_wrapper": usr/bin/minisatip_wrapper
