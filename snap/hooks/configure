@@ -1,9 +1,15 @@
-#!/bin/sh -e
+#!/bin/bash
 
 log_opt=$(snapctl get log)
 if ! expr "$log_opt" : '^(general|http|socketworks|stream|adapter|satipc|pmt|tables|dvbapi|lock|netceiver|ca|axe|socket|utils|dmx|ssdp|dvb)(,(general|http|socketworks|stream|adapter|satipc|pmt|tables|dvbapi|lock|netceiver|ca|axe|socket|utils|dmx|ssdp|dvb))*$' > /dev/null; then
     echo "\$log_opt\" is not a valid log value" >&2
-    exit 1
-else
     snapctl set log ""
+    exit 1
+fi
+
+unicable_opt$(snapctl get unicable)
+if ! "$unicable_opt" : '^\d:\d-\*?\d{4}(-\d+)?(,\d:\d-\*?\d{4}(-\d+)?)*$' > /dev/null; then
+    echo "\$unicable_opt\" is not a valid unicable value" >&2
+    snapctl set unicable ""
+    exit 1
 fi

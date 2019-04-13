@@ -6,5 +6,10 @@ log_opt=$(snapctl get log)
 if ! expr "$log_opt" : '^.\$' > /dev/null; then
     export OPTS=$OPTS:" -l $log_opt"
 fi
- 
+
+unicable_opt=$(snapctl get unicable)
+if ! expr "$unicable_opt" : '^.\$' > /dev/null; then
+    export OPTS=$OTPS:" -u $unicable_opt"
+fi
+
 $SNAP/usr/share/minisatip/html "$OPTS"
