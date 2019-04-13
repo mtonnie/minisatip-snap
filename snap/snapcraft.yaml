@@ -39,7 +39,6 @@
         cp minisatip ../install/usr/bin/minisatip
         mkdir -p ../install/usr/share/minisatip/html
         cp -R html/* ../install/usr/share/minisatip/html
-        ls -lRa ../
       build-packages:
         - libdvbcsa-dev
         - dvb-apps
@@ -59,6 +58,6 @@
 
     wrapper:
       plugin: dump
-      source: bin
+      source: ./bin
       organize: 
-        bin/: usr/bin/
+        minisatip_wrapper: usr/bin/minisatip_wrapper
